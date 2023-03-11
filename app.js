@@ -8,6 +8,11 @@ function logRequest(method, url, headers, body) {
     console.log(`received request;\n method: ${method}\n url: ${url}\n headers: ${JSON.stringify(headers)}\n body: ${body}\n`);
 };
 
+function wordcount(text) {
+    const words = text.split(" ");
+    return words.length;
+};
+
 const server = http.createServer((req,res) => {
 
     // getting body
@@ -27,7 +32,7 @@ const server = http.createServer((req,res) => {
         if(body && req.headers["content-type"] === 'text/plain') {
             res.statusCode = 200;
             res.setHeader('Content-type', 'text/plain');
-            res.end(`your text contains xx words`);
+            res.end(`your text contains ${wordcount(body)} words`);
         }
         else {
             res.statusCode = 400;
