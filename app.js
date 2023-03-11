@@ -5,7 +5,7 @@ const hostname = '127.0.0.1';
 const port = '3000';
 
 function logRequest(method, url, headers, body) {
-    console.log(`received request;\n method: ${method}\n url: ${url}\n headers: ${JSON.stringify(headers)}\n body: ${body}`);
+    console.log(`received request;\n method: ${method}\n url: ${url}\n headers: ${JSON.stringify(headers)}\n body: ${body}\n`);
 };
 
 const server = http.createServer((req,res) => {
@@ -21,8 +21,6 @@ const server = http.createServer((req,res) => {
         body = Buffer.concat(body).toString();
         // log the details of the incoming request
         logRequest(req.method,req.url,req.headers,body);
-    });
-
 
     // Routing request
     if(req.method === 'POST' && req.url === '/wordcount') {
@@ -44,10 +42,11 @@ const server = http.createServer((req,res) => {
     }
 
 
-
     res.on('error', (err) => {
         console.log(err);
     });
+    });
+
 });
 
 server.listen(port, hostname, () => {
