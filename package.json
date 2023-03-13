@@ -1,0 +1,22 @@
+{
+  "name": "wordcount",
+  "version": "1.0.0",
+  "description": "small API that returns wordcount (or line, character count) for a given text",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paullame/node-wordcount.git"
+  },
+  "author": "Paul LAME",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paullame/node-wordcount/issues"
+  },
+  "homepage": "https://github.com/paullame/node-wordcount#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0"
+  }
+}

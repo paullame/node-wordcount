@@ -1,4 +1,4 @@
-POST http://127.0.0.1:3000/wordcount
+POST http://127.0.0.1:3000/characters
 Accept: */*
 content-type: text/plain
 ```
